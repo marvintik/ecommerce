@@ -1,0 +1,31 @@
+<table class="table table-hover">
+<thead class="table-dark">
+<tr>
+  <th></th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Price</th>
+  <th>Units in Stock</th>
+  <th>Avaliable?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let tempProduct of products" [ngClass]="{'highlight': !tempProduct.active}">
+  <td>
+    <img src="{{tempProduct.imageUrl}}" height="100"/>
+  </td>
+  <td>{{ tempProduct.name }}</td>
+
+  <td>{{ tempProduct.description }}</td>
+  <td>{{ tempProduct.unitPrice | currency:'USD' }}</td>
+  <td>{{ tempProduct.unitsInStock }}</td>
+
+  <td>
+    <div *ngIf="tempProduct.active else myElseBlock">Yes</div>
+    <ng-template #myElseBlock>No</ng-template>
+  </td>
+</tr>
+
+</tbody>
+</table>
