@@ -1,0 +1,62 @@
+<div>
+  <div>
+    <h2 class="category-title">Sales:</h2>
+
+    <mat-carousel maintainAspectRatio="false" slideHeight="100%"  timings="250ms ease-in"
+                  [autoplay]="true"
+                  interval="5000"
+                  color="accent"
+                  maxWidth="100%"
+                  proportion="25"     slides="sales.length"
+                  [loop]="true"
+                  [hideArrows]="true"
+                  [hideIndicators]="true"
+                  [useKeyboard]="true"
+                  [useMouseWheel]="true"
+                  orientation="ltr">
+      <mat-carousel-slide *ngFor="let sale of sales" [image]="'assets/sale/sale-' + sale + '.jpg'" overlayColor="#00000040"
+                          [hideOverlay]="false">
+        <div
+          style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-size: 50px"
+        >
+          <h1 class="sale-title">SALE!!!</h1>
+          <h1 class="sale-title">All {{sale}} with 50% discount!</h1>
+        </div>
+      </mat-carousel-slide>
+    </mat-carousel>
+    <hr>
+    <div>
+      <div class="products" fxLayout="row" fxLayoutAlign="center center" *ngFor="let category of productCategories">
+        <h2>{{category.categoryName}}</h2>
+
+        <div *ngFor="let tempProduct of handleListProducts(category.id) | async">
+          <mat-card class="example-card">
+            <div routerLink="/products/{{tempProduct.id }}">
+              <img mat-card-image src="{{tempProduct.imageUrl}}"/>
+              <mat-card-title>{{ tempProduct.name }}</mat-card-title>
+              <mat-card-subtitle color="primary">{{ tempProduct.unitPrice | currency:'USD' }}</mat-card-subtitle>
+            </div>
+            <mat-card-actions>
+              <button mat-button class="example-icon color_grey" (click)="addToCart(tempProduct)">
+                <mat-icon>add_shopping_cart</mat-icon>
+              </button>
+              <button mat-button class="example-icon color_grey">
+                <mat-icon>favorite_border</mat-icon>
+              </button>
+              <button mat-button class="example-icon color_grey">
+                <mat-icon>share</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <hr>
+      </div>
+
+
+      <div *ngIf="productCategories?.length == 0" class="alert alert-warning col-md-12" role="alert">
+        No products found.
+      </div>
+
+    </div>
+  </div>
+</div>
