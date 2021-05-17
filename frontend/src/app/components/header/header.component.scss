@@ -1,0 +1,28 @@
+.logo-link {
+  height: 60%;
+  width: auto;
+}
+
+.logo-img {
+  align-self: center;
+  height: 100%;
+  width: auto;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.title-header {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-link  {
+    display: none;
+  }
+
+  .title-header {
+    display: none;
+  }
+}

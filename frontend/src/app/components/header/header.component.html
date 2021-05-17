@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-evenly center">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+  (click)="toggleSideNav()">
+    <mat-icon class="color_white">menu</mat-icon>
+  </button>
+  <a routerLink="/products" class="logo-link">
+    <img src="assets/images/logo2.png" alt="ecommerce" class="logo-img">
+  </a>
+  <span class="title-header" routerLink="/products">MARVINT</span>
+  <span class="example-spacer"></span>
+  <app-search></app-search>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon color_white" aria-label="Example icon-button with person icon"
+  routerLink="/login" *ngIf="!isAuthenticated">
+    <mat-icon class="color_white">person</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon color_white" aria-label="Example icon-button with person icon"
+          routerLink="/products" *ngIf="isAuthenticated">
+    <mat-icon class="color_white">favorite_border</mat-icon>
+  </button>
+
+  <app-cart-status></app-cart-status>
+</mat-toolbar>

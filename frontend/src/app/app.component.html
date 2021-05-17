@@ -1,44 +1,18 @@
-<div class="page-wrapper">
-
+<ng-container style="width: 100%">
+<app-header class="example-header"></app-header>
+<app-side-menu></app-side-menu>
+    <mat-sidenav-container class="example-container" [hasBackdrop]="showSideMenu" (backdropClick)="hideMenu()">
   <!-- MENU SIDEBAR-->
-  <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
-      <a routerLink="/products">
-        <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
-      </a>
-    </div>
-          <app-product-category-menu></app-product-category-menu>
-  </aside>
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                   [fixedInViewport]="false" position="start" disableClose>
+    <app-product-category-menu></app-product-category-menu>
+      </mat-sidenav>
   <!-- END MENU SIDEBAR-->
-
-  <div class="page-container">
+      <mat-sidenav-content class="example-content">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
     <!-- HEADER DESKTOP-->
-    <header class="header-desktop">
-      <div class="section-content section-content-p30">
-        <div class="container-fluid">
-          <div class="header-wrap">
-           <app-search></app-search>
-            <app-login-status></app-login-status>
-            <app-cart-status></app-cart-status>
-          </div>
-          <div class="account-wrap"></div>
-        </div>
-      </div>
-    </header>
-
-    <router-outlet></router-outlet>
-  </div>
-
-
-</div>
-
+    </mat-sidenav-container>
 <!-- END PAGE CONTAINER-->
-
-
-<footer>
-  <ul>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Help</a></li>
-  </ul>
-</footer>
+<app-footer class="example-footer"></app-footer>
+</ng-container>

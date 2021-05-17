@@ -1,8 +1,7 @@
-<div class="form-header">
-  <input #myInput class="au-input au-input-xl" type="text"
-         placeholder="Search for data ..."
-         (keyup.enter)="doSearch(myInput.value)" />
-  <button class="au-btn-submit" (click)="doSearch(myInput.value)">
+<div fxLayout="row" fxLayoutAlign="space-between center" class="search">
+  <span class="icon-search"><i class="fas fa-search"></i></span>
+  <input #myInput type="search" placeholder="Search for data .." (keyup.enter)="doSearch(myInput.value)">
+  <button mat-raised-button	(click)="doSearch(myInput.value)" color="accent" class="search-button">
     Search
   </button>
 </div>

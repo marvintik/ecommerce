@@ -1,0 +1,39 @@
+.search {
+  border-radius: 2px;
+  background-color: white;
+  padding-left: 5px;
+}
+
+:host {
+  width: 30%;
+}
+
+input {
+  width: 70%;
+  font-size: 16px;
+}
+
+.icon-search {
+  color: #757575;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .icon-search {
+    display: none;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  :host {
+    width: 50%;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+}

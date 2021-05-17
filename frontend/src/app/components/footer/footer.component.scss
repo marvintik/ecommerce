@@ -1,0 +1,25 @@
+:host {
+  position: absolute;
+  width: 100%;
+  line-height: 60px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: #d1d8eb;
+  z-index: 1;
+  height: 60px;
+}
+
+a {
+  color: #fff;
+  font-weight: bold;
+  margin: 0 10px 0 10px;
+}
+
+.link-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

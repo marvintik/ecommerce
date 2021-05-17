@@ -1,0 +1,25 @@
+.menu-sidenav {
+  width: 250px;
+}
+
+.logo-link {
+  height: 40px;
+  width: auto;
+}
+.logo-img {
+  align-self: center;
+  height: 100%;
+  width: auto;
+}
+
+.sidenav-header {
+  background-color: #3F51B5;
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}

@@ -1,0 +1,14 @@
+<mat-sidenav #sidenavMenu mode="over" [opened]="toggle"
+             [fixedInViewport]="true" class="menu-sidenav">
+  <div class="sidenav-header" >
+    <a routerLink="/products" class="logo-link">
+      <img src="assets/images/logo2.png" alt="ecommerce" class="logo-img">
+    </a>
+    <span class="title-header">MARVINT</span>
+    <button mat-button (click)="hideMenu()">X</button>
+  </div>
+
+  <app-login-status></app-login-status>
+    <hr>
+  <app-product-category-menu></app-product-category-menu>
+</mat-sidenav>

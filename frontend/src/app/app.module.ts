@@ -22,6 +22,26 @@ import myAppConfig from './config/my-app-config';
 import {MembersPageComponent} from './components/members-page/members-page.component';
 import {OrderHistoryComponent} from './components/order-history/order-history.component';
 import {AuthInterceptorService} from './services/auth-interceptor.service';
+import {FooterComponent} from './components/footer/footer.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HeaderComponent} from './components/header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MdbModule } from 'mdb-angular-ui-kit';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {MatCarouselModule} from '@ngbmodule/material-carousel';
+import { HomeComponent } from './components/home/home.component';
+
 
 const oktaConfig = Object.assign({
   onAuthRequired: (oktaAuth, injector) => {
@@ -38,12 +58,13 @@ const routes: Routes = [
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
   {path: 'search/:keyword', component: ProductListComponent},
-  {path: 'category/:id', component: ProductListComponent},
+  {path: 'category/:id/:name', component: ProductListComponent},
   {path: 'order-history', component: OrderHistoryComponent, canActivate: [OktaAuthGuard]},
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
-  {path: '', redirectTo: '/products', pathMatch: 'full'},
-  {path: '**', redirectTo: '/products', pathMatch: 'full'}
+  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -59,7 +80,11 @@ const routes: Routes = [
     LoginComponent,
     LoginStatusComponent,
     MembersPageComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    FooterComponent,
+    HeaderComponent,
+    SideMenuComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}),
@@ -67,7 +92,22 @@ const routes: Routes = [
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    OktaAuthModule
+    OktaAuthModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MdbModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatPaginatorModule,
+    OverlayModule,
+    MatCarouselModule,
   ],
   providers: [ProductService, {provide: OKTA_CONFIG, useValue: oktaConfig}, {
     provide: HTTP_INTERCEPTORS,

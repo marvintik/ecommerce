@@ -29,3 +29,21 @@
 
 </tbody>
 </table>
+<div>
+  <ngb-pagination (pageChange)="listProducts()"
+                  [(page)]="thePageNumber"
+                  [boundaryLinks]="true"
+                  [collectionSize]="theTotalElements"
+                  [maxSize]="5"
+                  [pageSize]="thePageSize">
+  </ngb-pagination>
+  <div>
+    <span class="mr-2">Page Size </span>
+    <select (change)="updatePagesSize($event.target.value)">
+      <option selected="true">10</option>
+      <option>25</option>
+      <option>50</option>
+      <option>100</option>
+    </select>
+  </div>
+</div>

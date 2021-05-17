@@ -1,0 +1,71 @@
+.security-btn {
+  position:relative;
+  right:0;
+  min-width:95px;
+  color:#fff;
+  border:10px solid #205b8d;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:43px;
+  background:#205b8d
+}
+
+.login-status-header{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-status-user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.user-icon {
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  background-color: #C5CAE9;
+  border-radius: 5px;
+}
+
+.user-mat-icon {
+  color: darkblue;
+  font-size: 50px;
+}
+
+.mat-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.login-status-title {
+  background-color: #3F51B5;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  color: white;
+}
+
+p {
+  margin: 0;
+}
